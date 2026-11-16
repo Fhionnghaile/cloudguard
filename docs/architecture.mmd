@@ -1,0 +1,7 @@
+flowchart TD
+  EB["EventBridge<br/>rate(1 hour)"] -->|invoke| SC["Scanner Lambda<br/>(python, read-only)"]
+  SC -->|read-only enumerate| AWS["AWS APIs<br/>S3 / EC2 / IAM / RDS / CloudTrail"]
+  SC -->|reconcile findings| DDB[("DynamoDB<br/>single table + GSI1/GSI2 + TTL")]
+  DDB --> API["Read API<br/>(API Gateway + Lambda)"]
+  API --> DASH["Dashboard<br/>(static site)"]
+  SC -. "safe subset, flag + tag allow-list" .-> REM["Remediator Lambda<br/>(separately scoped role)"]
