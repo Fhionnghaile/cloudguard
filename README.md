@@ -4,7 +4,7 @@
 > **Catches an insecure cloud resource the moment it appears.**  
 > **Result:** 6 tests against moto (mocked AWS) — the whole scanner proven end-to-end with no account or bill.  
 > **Reproduce:** `pytest -q`  
-> ![CI](https://github.com/fhionnghaile/cloudguard/actions/workflows/ci.yml/badge.svg)
+> ![CI](https://github.com/fhionnghaile/cloudguard/actions/workflows/ci.yml/badge.svg) [![OpenSSF Scorecard](https://api.scorecard.dev/projects/github.com/Fhionnghaile/cloudguard/badge)](https://scorecard.dev/viewer/?uri=github.com/Fhionnghaile/cloudguard)
 >
 > **What this is worth:** Shrinks the window between 'someone opened an S3 bucket' and 'we knew' from weeks to seconds.
 
