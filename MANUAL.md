@@ -11,6 +11,9 @@ An event-driven scanner that finds risky AWS settings soon after they appear and
 ## 3. Demo
 Architecture diagram: `docs/architecture.mmd`. Capture to record: the moto-backed test run.
 
+![Real test run, captured 24 Nov 2026](docs/test-run.svg)
+*Real output from this repository's own tests, captured 24 Nov 2026.*
+
 ## 4. Run it yourself
 **Prerequisites:** Python 3. Terraform and a sandbox AWS account only if deploying.
 
