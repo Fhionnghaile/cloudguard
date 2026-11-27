@@ -6,7 +6,7 @@
 > **Reproduce:** `pytest -q`  
 > ![CI](https://github.com/fhionnghaile/cloudguard/actions/workflows/ci.yml/badge.svg) [![OpenSSF Scorecard](https://api.scorecard.dev/projects/github.com/Fhionnghaile/cloudguard/badge)](https://scorecard.dev/viewer/?uri=github.com/Fhionnghaile/cloudguard)
 >
-> **What this is worth:** Shrinks the window between 'someone opened an S3 bucket' and 'we knew' from weeks to seconds.
+> **What this is worth:** Shrinks the window between 'someone opened an S3 bucket' and 'we knew' to under an hour (an hourly scheduled scan), with safe fixes applied automatically.
 
 
 Event-driven scanner: **EventBridge → Lambda → DynamoDB**, dashboarded, auto-remediating a *safe*
@@ -68,7 +68,7 @@ MIT.
 
 ## Key decisions
 
-- Event-driven (EventBridge→Lambda→DynamoDB), so detection is immediate, not a nightly scan.
+- Event-driven (EventBridge→Lambda→DynamoDB), so findings arrive within the hour (hourly schedule), not after a quarterly audit.
 - Single-table DynamoDB modelled around the access patterns, with a TTL for ageing findings.
 - Reconciliation closes fixed findings instead of re-alerting — signal over noise.
 
